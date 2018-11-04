@@ -28,19 +28,19 @@ Flux es una patrón/arquitectura  para el manejo y el flujo de los datos en una 
 
 Estamos acostumbrados a las arquitecturas MVC en la que hay un flujo de datos bidireccional, es decir cualquier modificación en el servidor se modifica en la vista y viceversa, esto hace que en flujos complejos los problemas de rendimiento están a la orden del día. Con Flux esto cambia, propone una arquitectura en la que el flujo de datos es unidireccional. Los datos viajan desde la vista por medio de acciones y llegan a un Store desde el cual se actualizará la vista de nuevo.
 
-![patronflux](./assets/flux.PNG)
+![patronflux](./assets/flux.png)
 
 Teniendo todo el flujo de la aplicación centralizado es mucho más sencillo depurar las aplicaciones y encontrar los errores en la misma.
 
 Que actores entran en juego en una arquitectura Flux:
 
-·       Vista: Serían los propios componentes de React.
+·       **Vista**: Serían los propios componentes de React.
 
-·       Store: Guarda los datos de la aplicación. No hay métodos en la store que permitan modificar directamente sobre ella, se tiene que hacer a través de dispatcher y acciones.
+·       **Store**: Guarda los datos de la aplicación. No hay métodos en la store que permitan modificar directamente sobre ella, se tiene que hacer a través de dispatcher y acciones.
 
-·       Actions o Acciones: Una acción es simplemente un objeto que indica una intención de realizar algo y que lleva datos asociados en caso de ser necesario.
+·       **Actions o Acciones**: Una acción es simplemente un objeto que indica una intención de realizar algo y que lleva datos asociados en caso de ser necesario.
 
-·       Dispatcher:  No es más que un mediador entre la Store y las acciones. Sirve para desacoplar la Store de la vista, ya que así no es necesario conocer que Store maneja una acción concreta.
+·       **Dispatcher**:  No es más que un mediador entre la Store y las acciones. Sirve para desacoplar la Store de la vista, ya que así no es necesario conocer que Store maneja una acción concreta.
 
 El flujo que sigue la aplicación sería el siguiente:
 
@@ -56,16 +56,18 @@ El flujo que sigue la aplicación sería el siguiente:
 
 Este patrón se puede implementar bien de forma propia o bien utilizando alguna librería como pueda ser Redux, ReFlux, Fluxxor, Fluxible, etc…  De todas ellas la más utilizada es Redux, es una pequeña librería de menos de 2kb y que con unos pocos métodos implementa el patrón Flux. Es agnóstica al framework por lo que esta se puede implementar en otros frameworks como Angular, Vue, etc.
 
-¿Qué hace Redux?
+###¿Qué hace Redux?
 
 Se encarga en cierta manera de desacoplar el estado global de una aplicación web de la parte visual. El estado de la aplicación pueden ser varias cosas, normalmente se trata los datos que se reciben a través de peticiones a servicios REST (consultas a listas de SharePoint). Pero también se refiere al estado de la UI en un determinado momento, por ejemplo: mostrar una información al usuario o no, un mensaje de error, ocultar desplegar un panel, etc.
 
 Los conceptos claves de Redux:
 
-1.       La Store=> La única fuente de datos, aunque el patrón Flux indica que pueden haber más de una store, Redux simplifica unificando todo en un único árbol.
+**1.- La Store**=> La única fuente de datos, aunque el patrón Flux indica que pueden haber más de una store, Redux simplifica unificando todo en un único árbol.
 
-2.       El Estado => Solo podemos modificar el estado a través de acciones
+**2.- El Estado**=> Solo podemos modificar el estado a través de acciones
 
-3.       Reducers=> Es básicamente una función que recibe dos parámetros, el estado inicial y una acción y dependiendo del tipo de acción realizará una operación u otra en el estado.
+**3.- Reducers**=> Es básicamente una función que recibe dos parámetros, el estado inicial y una acción y dependiendo del tipo de acción realizará una operación u otra en el estado.
+
+# Show me the Code Talk is Cheap !! 
 
 
