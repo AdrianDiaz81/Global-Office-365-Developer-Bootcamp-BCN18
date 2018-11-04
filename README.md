@@ -23,7 +23,7 @@ Si bien es cierto que hay multitud de frameworks/librerias JS y la elección de 
 Ahora bien pueden haber supuestos en los que es necesario que nuestro desarrollo sea un poco más complejo y sea necesario añadirle más "complementos" a nuestro desarrollo. Es decir necesitaremos enrutado, acciones, .... Con todo esto ReactJS tiene una serie de librerias que si pueden incorporar react-redux,redux-thunk, etc...  
 Todo esto esta muy bien, que es lo novedoso que trae ReactJS y su implementación el patrón FLUX
 
-### Que es el patrón FLUX 
+### Qué es el patrón FLUX 
 Flux es una patrón/arquitectura  para el manejo y el flujo de los datos en una aplicación web. Fue ideada por el equipo de Facebook siendo su funcionalidad principal facilitar el manejo de datos en aplicaciones web con cierto grado de complejidad.
 
 Estamos acostumbrados a las arquitecturas MVC en la que hay un flujo de datos bidireccional, es decir cualquier modificación en el servidor se modifica en la vista y viceversa, esto hace que en flujos complejos los problemas de rendimiento están a la orden del día. Con Flux esto cambia, propone una arquitectura en la que el flujo de datos es unidireccional. Los datos viajan desde la vista por medio de acciones y llegan a un Store desde el cual se actualizará la vista de nuevo.
@@ -56,7 +56,7 @@ El flujo que sigue la aplicación sería el siguiente:
 
 Este patrón se puede implementar bien de forma propia o bien utilizando alguna librería como pueda ser Redux, ReFlux, Fluxxor, Fluxible, etc…  De todas ellas la más utilizada es Redux, es una pequeña librería de menos de 2kb y que con unos pocos métodos implementa el patrón Flux. Es agnóstica al framework por lo que esta se puede implementar en otros frameworks como Angular, Vue, etc.
 
-###¿Qué hace Redux?
+#### ¿Qué hace Redux?
 
 Se encarga en cierta manera de desacoplar el estado global de una aplicación web de la parte visual. El estado de la aplicación pueden ser varias cosas, normalmente se trata los datos que se reciben a través de peticiones a servicios REST (consultas a listas de SharePoint). Pero también se refiere al estado de la UI en un determinado momento, por ejemplo: mostrar una información al usuario o no, un mensaje de error, ocultar desplegar un panel, etc.
 
