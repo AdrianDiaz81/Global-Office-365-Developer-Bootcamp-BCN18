@@ -1,0 +1,10 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.6.0",
+    "libraryName": "global-office-365-developer-bootcamp-bcn-18",
+    "libraryId": "b885a637-075d-40a2-86af-8c0709085196",
+    "environment": "spo",
+    "packageManager": "npm",
+    "isCreatingSolution": true
+  }
+}

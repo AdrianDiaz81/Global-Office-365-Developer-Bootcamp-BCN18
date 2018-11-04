@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "global-office-365-developer-bootcamp-bcn-18-client-side-solution",
+    "id": "b885a637-075d-40a2-86af-8c0709085196",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/global-office-365-developer-bootcamp-bcn-18.sppkg"
+  }
+}
