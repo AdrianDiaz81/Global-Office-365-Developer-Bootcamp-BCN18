@@ -19,19 +19,51 @@ namespace api.Controllers
             Player player1 = new Player
             {
                 Id="1",
-                FullName = "Luka Modrid",
-                Club = "Real Madrid",
-                Image = "https://s6.eestatic.com/2018/09/01/enfoques/Enfoques_334732197_95541287_1024x576.jpg",
+                FullName = "Lebron James",
+                Club = "LA Lakers",
+                Image = "https://cdn.images.express.co.uk/img/dynamic/4/590x/LeBron-James-1042406.jpg?r=1541637526668",
                 Country = new Country
                 {
-                    Name = "Croacia",
+                    Name = "USA",
                     Contintent = new Continent
                     {
-                        Name = "Europa"
+                        Name = "AMERICA"
+                    }
+                }
+            };
+            Player player2 = new Player
+            {
+                Id = "2",
+                FullName = "Stephen Curry",
+                Club = "Golden State Warriors",
+                Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Stephen_Curry_dribbling_2016_%28cropped%29.jpg/245px-Stephen_Curry_dribbling_2016_%28cropped%29.jpg",
+                Country = new Country
+                {
+                    Name = "USA",
+                    Contintent = new Continent
+                    {
+                        Name = "AMERICA"
+                    }
+                }
+            };
+            Player player3 = new Player
+            {
+                Id = "3",
+                FullName = "Michael Jordan",
+                Club ="Chicago Bulls ",
+                Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgBAWBaFyj2njBu_pe13O2U0fmAAUcEQbHanFQBKGrGdMUCZvm",
+                Country = new Country
+                {
+                    Name = "USA",
+                    Contintent = new Continent
+                    {
+                        Name = "AMERICA"
                     }
                 }
             };
             this.playersCollection.Add(player1);
+            this.playersCollection.Add(player2);
+            this.playersCollection.Add(player3);
         }
 
         // GET: api/Player
