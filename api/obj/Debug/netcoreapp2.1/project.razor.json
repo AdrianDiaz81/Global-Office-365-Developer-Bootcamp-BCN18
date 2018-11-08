@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\adiaz\\Documents\\GitHub\\Global-Office-365-Developer-Bootcamp-BCN18\\api\\api.csproj",
+  "TargetFramework": "netcoreapp2.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "MVC-2.1",
+    "LanguageVersion": "2.1",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-2.1"
+      }
+    ]
+  }
+}

@@ -7,6 +7,13 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
+import * as ReactDOM from 'react-dom';
+
+import { AppContainer } from 'react-hot-loader';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import * as RoutesModule from './components/routes';
+
 import App  from './components/app';
 import { createStore } from './components/store';
 import { Store } from 'redux';
@@ -24,18 +31,26 @@ export default class ReactReduxNinjaWebPart extends BaseClientSideWebPart<IReact
   public render(): void {
     if (this.renderedOnce) { return; }
 
-    const element: React.ReactElement<any > = React.createElement(
-      App,
-      {
-        description: this.properties.description,
-        domElement:this.domElement,
-        store:this.store
-      }
-    );
+    // const element: React.ReactElement<any > = React.createElement(
+    //   App,
+    //   {
+    //     description: this.properties.description
+    //   }
+    // );
 
-    ReactDom.render(element, this.domElement);
+    //ReactDom.render(element, this.domElement);
     
-       
+        const routes = RoutesModule.routes;
+
+    const baseUrl = "/";
+    ReactDOM.render(
+      <AppContainer>
+          <Provider store={this.store}>
+              <BrowserRouter children={routes} basename={baseUrl} />
+          </Provider>
+      </AppContainer>,
+      this.domElement
+    );   
   }
 
   protected onDispose(): void {

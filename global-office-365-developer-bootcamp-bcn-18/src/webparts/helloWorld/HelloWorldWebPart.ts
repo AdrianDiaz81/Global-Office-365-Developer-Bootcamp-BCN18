@@ -7,35 +7,25 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
-import App  from './components/app';
-import { createStore } from './components/store';
-import { Store } from 'redux';
+import * as strings from 'HelloWorldWebPartStrings';
+import HelloWorld from './components/HelloWorld';
+import { IHelloWorldProps } from './components/IHelloWorldProps';
 
-export interface IReactReduxNinjaWebPartProps {
+export interface IHelloWorldWebPartProps {
   description: string;
 }
 
-export default class ReactReduxNinjaWebPart extends BaseClientSideWebPart<IReactReduxNinjaWebPartProps> {
-  private store:Store<{}>;
-  constructor(props: IReactReduxNinjaWebPartProps) {
-    super();
-    this.store=createStore();
-        }
-  public render(): void {
-    if (this.renderedOnce) { return; }
+export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
 
-    const element: React.ReactElement<any > = React.createElement(
-      App,
+  public render(): void {
+    const element: React.ReactElement<IHelloWorldProps > = React.createElement(
+      HelloWorld,
       {
-        description: this.properties.description,
-        domElement:this.domElement,
-        store:this.store
+        description: this.properties.description
       }
     );
 
     ReactDom.render(element, this.domElement);
-    
-       
   }
 
   protected onDispose(): void {
@@ -51,14 +41,14 @@ export default class ReactReduxNinjaWebPart extends BaseClientSideWebPart<IReact
       pages: [
         {
           header: {
-            description: ""
+            description: strings.PropertyPaneDescription
           },
           groups: [
             {
-              groupName: "",
+              groupName: strings.BasicGroupName,
               groupFields: [
                 PropertyPaneTextField('description', {
-                  label: ""
+                  label: strings.DescriptionFieldLabel
                 })
               ]
             }
